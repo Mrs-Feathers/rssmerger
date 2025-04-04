@@ -68,7 +68,7 @@ class RssRequestHandler(http.server.BaseHTTPRequestHandler):
 
 # load feed configuration from file
 stream = open('feeds.yml')
-urls = yaml.load(stream)
+urls = yaml.safe_load(stream) #like a try and catch just in case someone screws up
 
 # serve via HTTP
 handler = RssRequestHandler
