@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  rssmerger:
+    build: .
+    ports:
+      - "9876:8000"
+    volumes:
+      - ./feeds.yml:/app/feeds.yml
+    restart: unless-stopped
